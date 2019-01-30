@@ -33,8 +33,8 @@ import json
 import hmac
 import hashlib
 
-def create_sha256_signature(key, message): 
-    return hmac.new(key, message, hashlib.sha256).hexdigest()
+def create_sha256_signature(secret, message): 
+    return hmac.new(secret, message, hashlib.sha256).hexdigest()
 
 def get_access_token(api_key, api_secret, memo):
     url = "https://openapi.bitmart.com/v2/authentication"
